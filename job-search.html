@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Find job opportunities on company career pages with a smart Google search query builder.">
+  <title>Job Search — Find opportunities beyond job boards</title>
+  <style>
+:root{--bg:#090d18;--panel:#111827;--panel2:#131d2d;--text:#f4f7fb;--muted:#a0aec0;--faint:#718096;--line:rgba(172,194,224,.15);--accent:#85f0c3;--accent-strong:#4dd6a0;--blue:#8ba7ff;--danger:#ff8d97;--shadow:0 26px 90px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);background:radial-gradient(ellipse at 50% -15%,#172745 0%,#0b1120 42%,var(--bg) 74%);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}.ambient{pointer-events:none;position:absolute;border-radius:50%;filter:blur(95px);opacity:.16;z-index:0}.ambient-one{width:390px;height:390px;left:-170px;top:420px;background:#4dd6a0}.ambient-two{width:470px;height:470px;right:-260px;top:830px;background:#577cf6}.page-shell{position:relative;z-index:1;max-width:1130px;padding:0 30px;margin:0 auto}.topbar{height:98px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(185,202,230,.08)}.brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}.brand-mark{display:grid;place-items:center;width:43px;height:43px;border:1px solid rgba(133,240,195,.3);border-radius:14px;background:linear-gradient(145deg,rgba(133,240,195,.17),rgba(83,116,180,.13));color:var(--accent)}.brand-mark svg{width:25px;height:25px}.brand-copy{display:flex;flex-direction:column;gap:3px}.brand-copy strong{font-size:18px;letter-spacing:-.8px;font-weight:800}.brand-copy strong span{color:var(--accent)}.brand-copy small{color:#8492a8;font-family:"DM Mono",monospace;font-size:8px;letter-spacing:1.45px}.topbar-right{display:flex;align-items:center;gap:9px;color:#a7b3c5;font-size:12px}.status-dot,.green-dot{width:7px;height:7px;border-radius:50%;background:var(--accent-strong);box-shadow:0 0 12px rgba(77,214,160,.48);display:inline-block}.hero{padding-top:77px}.eyebrow{display:flex;justify-content:center;align-items:center;gap:8px;color:#b2c3d7;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:1.25px;text-transform:uppercase}.sparkle{color:var(--accent);font-size:15px}.hero h1{text-align:center;font-size:clamp(43px,6.2vw,70px);line-height:1.12;letter-spacing:-3.3px;margin:22px 0 17px;font-weight:800}.hero h1 span{color:var(--accent);text-shadow:0 0 38px rgba(133,240,195,.14)}.hero-copy{max-width:650px;margin:0 auto;text-align:center;font-size:15px;line-height:1.85;color:#a8b4c6}.search-panel{max-width:810px;margin:42px auto 0;padding:28px 30px 24px;background:linear-gradient(145deg,rgba(21,31,49,.91),rgba(14,22,36,.91));border:1px solid rgba(164,189,223,.19);border-radius:22px;box-shadow:var(--shadow);backdrop-filter:blur(18px)}.panel-topline{display:flex;align-items:center;justify-content:space-between;padding-bottom:24px;margin-bottom:1px;border-bottom:1px solid var(--line)}.panel-title{display:flex;align-items:center;gap:10px;color:#eff5fc;font-size:14px;font-weight:750}.mini-icon{font-size:22px;color:var(--accent);line-height:1}.client-badge{display:flex;align-items:center;gap:7px;color:#9aabc1;background:rgba(255,255,255,.035);border:1px solid rgba(174,195,223,.12);padding:7px 10px;border-radius:100px;font-size:10px}.client-badge .status-dot{width:6px;height:6px}.field-group{margin-top:25px;position:relative}.field-group>label{display:block;margin:0 0 11px 2px;color:#97a8bd;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:1.2px;font-weight:500}.input-wrap{position:relative}.input-wrap input{width:100%;height:54px;padding:0 46px;border:1px solid rgba(164,189,223,.21);border-radius:12px;background:rgba(7,13,25,.68);outline:none;color:#f0f6ff;font:500 14px system-ui,-apple-system,"Segoe UI",sans-serif;transition:border-color .18s,box-shadow .18s,background .18s}.input-wrap input::placeholder{color:#63738b}.input-wrap input:focus{border-color:rgba(133,240,195,.65);box-shadow:0 0 0 3px rgba(133,240,195,.075);background:rgba(7,13,25,.9)}.field-icon{position:absolute;left:16px;top:16px;width:22px;height:22px;color:#8191aa;pointer-events:none}.clear-input{position:absolute;right:13px;top:13px;width:28px;height:28px;border:0;border-radius:8px;background:rgba(255,255,255,.07);color:#b9c4d3;font-size:20px;line-height:1;cursor:pointer}.clear-input:hover{background:rgba(255,255,255,.13);color:#fff}.field-hint{font-size:11px;color:#71829a;margin:9px 2px 0;line-height:1.6}.mode-switch{display:flex;gap:8px;margin-bottom:13px}.mode-button{display:flex;justify-content:center;align-items:center;gap:8px;padding:11px 15px;min-height:42px;border-radius:10px;border:1px solid rgba(164,189,223,.16);background:rgba(8,15,28,.4);color:#99a9bf;font:600 12px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;transition:all .16s}.mode-button span{font-size:16px;line-height:1}.mode-button:hover{border-color:rgba(133,240,195,.3);color:#e6f2ff}.mode-button.is-active{border-color:rgba(133,240,195,.42);background:rgba(133,240,195,.1);color:#b4f5d8;box-shadow:inset 0 0 0 1px rgba(133,240,195,.04)}.location-input-wrap{margin-top:5px}.location-group .field-hint{margin-top:10px}.suggestions{position:absolute;top:calc(100% + 7px);left:0;right:0;z-index:20;padding:6px;background:#131d2d;border:1px solid rgba(164,189,223,.23);border-radius:12px;box-shadow:0 22px 55px rgba(0,0,0,.45);max-height:260px;overflow:auto}.suggestion-option{width:100%;display:flex;align-items:center;gap:11px;padding:11px 12px;border:0;border-radius:8px;background:transparent;color:#e2ebf6;font:500 12px system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left;cursor:pointer}.suggestion-option:hover,.suggestion-option[aria-selected="true"]{background:rgba(133,240,195,.1);color:#c6f9e1}.suggestion-symbol{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.055);color:var(--accent);font-size:14px;flex-shrink:0}.suggestion-meta{display:block;margin-top:3px;font-size:10px;color:#8494aa}.empty-suggestion{padding:13px;color:#98a8bc;font-size:12px}.panel-actions{display:flex;align-items:center;gap:18px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}.primary-button{display:flex;align-items:center;justify-content:center;gap:13px;min-height:50px;padding:0 22px;border:0;border-radius:11px;background:linear-gradient(135deg,#a0f4d0,#65dda9);color:#0a2b20;font:800 13px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;box-shadow:0 7px 26px rgba(77,214,160,.14);transition:transform .16s,box-shadow .16s,filter .16s}.primary-button:hover{transform:translateY(-1px);box-shadow:0 10px 31px rgba(77,214,160,.23);filter:brightness(1.03)}.primary-button:active{transform:translateY(0)}.primary-button svg{width:19px;height:19px}.action-note{display:flex;align-items:center;gap:7px;color:#8292a8;font-size:10px}.action-note svg{width:16px;height:16px;color:#88a2b8}.validation-message{min-height:0;margin:0;color:var(--danger);font-size:11px}.validation-message:not(:empty){margin-top:12px;min-height:14px}.query-card{max-width:810px;margin:20px auto 0;padding:23px 26px 17px;border:1px solid rgba(164,189,223,.13);border-radius:17px;background:rgba(17,25,40,.68)}.query-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:15px}.section-kicker{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:1.35px;color:#8fa4ba}.query-header h2{font-size:14px;margin:5px 0 0;letter-spacing:-.25px}.copy-button{display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid rgba(164,189,223,.19);border-radius:9px;background:rgba(255,255,255,.025);color:#b8c7d9;font:600 10px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;white-space:nowrap}.copy-button:hover{color:#dcffed;border-color:rgba(133,240,195,.38);background:rgba(133,240,195,.06)}.copy-button svg{width:15px;height:15px}.query-output{padding:15px 16px;border:1px solid rgba(133,240,195,.17);border-radius:10px;background:rgba(5,11,21,.55);color:#bdd8d2;font:11px/1.9 "DM Mono",ui-monospace,SFMono-Regular,monospace;overflow-wrap:anywhere;min-height:65px;outline:none}.query-output:focus{border-color:rgba(133,240,195,.45)}.query-footer{display:flex;align-items:center;justify-content:space-between;margin-top:13px;color:#73869e;font-size:10px}.query-footer>span{display:flex;align-items:center;gap:7px}.green-dot{width:5px;height:5px}.text-button{background:none;border:0;padding:2px 0;color:#8fa5bf;font:600 10px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}.text-button:hover{color:var(--accent)}.how-section{margin:107px auto 0}.section-heading{text-align:center}.section-heading h2,.popular-heading h2{font-size:30px;letter-spacing:-1.1px;margin:10px 0 8px}.section-heading p{margin:0;color:#8c9db3;font-size:13px}.steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}.step-card{position:relative;padding:24px 24px 25px;border:1px solid rgba(164,189,223,.13);border-radius:15px;background:linear-gradient(135deg,rgba(18,28,44,.8),rgba(13,21,34,.72));min-height:209px}.step-number{position:absolute;right:21px;top:19px;color:#657790;font:11px "DM Mono",monospace;letter-spacing:1px}.step-icon{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;margin-bottom:20px}.step-icon svg{width:22px;height:22px}.role-step{background:rgba(133,240,195,.1);color:#8af0c2}.location-step{background:rgba(139,167,255,.1);color:#a5b9ff}.search-step{background:rgba(242,190,111,.1);color:#f4cb8a}.step-card h3{font-size:14px;letter-spacing:-.2px;margin:0 0 9px}.step-card p{font-size:11px;line-height:1.8;color:#8a9ab0;margin:0}.popular-section{margin:86px auto 0}.popular-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}.popular-heading h2{font-size:25px;margin-bottom:0}.popular-caption{color:#7f91a9;font-size:11px;padding-bottom:5px}.popular-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:21px}.role-chip{border:1px solid rgba(164,189,223,.16);border-radius:100px;padding:10px 14px;background:rgba(18,27,42,.72);color:#a9b9cc;font:600 11px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;transition:all .16s}.role-chip:hover{border-color:rgba(133,240,195,.4);background:rgba(133,240,195,.08);color:#c7f9e1}.footer{display:flex;justify-content:space-between;gap:15px;padding:34px 0 29px;margin-top:82px;border-top:1px solid rgba(185,202,230,.08);font-size:10px;color:#6f8198}.footer-separator{padding:0 5px;color:#53657e}[hidden]{display:none!important}
+@media(max-width:700px){.page-shell{padding:0 18px}.topbar{height:82px}.topbar-right{font-size:10px}.brand-mark{width:39px;height:39px}.hero{padding-top:59px}.hero h1{letter-spacing:-2.3px;font-size:clamp(39px,10vw,58px)}.hero-copy{font-size:13px;line-height:1.8}.search-panel{margin-top:31px;padding:22px 18px 20px;border-radius:18px}.panel-topline{padding-bottom:19px}.client-badge{font-size:9px;padding:6px 8px}.panel-title{font-size:13px}.field-group{margin-top:22px}.input-wrap input{height:51px;font-size:13px;padding-left:43px}.field-icon{left:13px}.mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:7px}.mode-button{font-size:10px;padding:9px 7px;gap:5px}.panel-actions{align-items:flex-start;flex-direction:column;gap:12px;margin-top:23px;padding-top:20px}.primary-button{width:100%}.query-card{padding:19px 15px 15px}.query-header{align-items:flex-start}.copy-button{padding:8px 9px}.query-output{font-size:10px;padding:12px}.how-section{margin-top:77px}.section-heading h2{font-size:26px}.section-heading p{font-size:12px;line-height:1.7}.steps-grid{grid-template-columns:1fr;gap:11px;margin-top:24px}.step-card{min-height:unset;padding:20px 20px 21px}.step-icon{margin-bottom:13px}.popular-section{margin-top:65px}.popular-heading h2{font-size:23px}.popular-caption{font-size:10px}.popular-chips{gap:8px}.role-chip{font-size:10px;padding:9px 11px}.footer{flex-direction:column;margin-top:60px;padding-top:25px;font-size:9px}.ambient-one{width:230px;height:230px;left:-150px}.ambient-two{width:260px;height:260px;right:-210px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Remote country/continent target selector */
+.region-label{display:block;margin:0 0 9px 2px;color:#a4b5cb;font-size:10px;font-weight:750;letter-spacing:1.05px}
+.region-select-shell{position:relative}
+.region-select{display:block;width:100%;height:51px;appearance:none;border:1px solid rgba(164,189,223,.18);border-radius:11px;padding:0 43px 0 45px;background:rgba(7,13,25,.72);color:#e0ebf7;font:500 13px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;outline:none;transition:border-color .16s,box-shadow .16s}
+.region-select:focus{border-color:rgba(133,240,195,.55);box-shadow:0 0 0 3px rgba(133,240,195,.075)}
+.region-select option,.region-select optgroup{background:#131d2d;color:#e0ebf7}
+.region-select-icon{position:absolute;left:15px;top:13px;color:#8edeb9;font-size:19px;pointer-events:none}
+.region-select-chevron{position:absolute;right:15px;top:11px;color:#94a7bf;font-size:20px;pointer-events:none}
+@media(max-width:700px){.region-select{height:51px;font-size:12px;padding-left:42px}.region-label{font-size:9px}}
+
+  </style>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Job Search home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M10.7 4.2a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 4.3 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.3 10.7h4.8M10.7 8.3v4.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>job<span>search</span></strong><small>GO BEYOND JOB BOARDS</small></span>
+      </a>
+      <div class="topbar-right"><span class="status-dot"></span><span>Free · No sign-up</span></div>
+    </header>
+
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="sparkle">✦</span> A smarter way to find your next role</div>
+      <h1 id="hero-title">Your next opportunity<br><span>is out there.</span></h1>
+      <p class="hero-copy">Search company career pages directly. Build a targeted Google query and uncover opportunities that can get buried beneath the big job boards.</p>
+
+      <section class="search-panel" aria-label="Job search query builder">
+        <div class="panel-topline"><div class="panel-title"><span class="mini-icon">⌕</span><span>Build your search</span></div><span class="client-badge"><span class="status-dot"></span> Runs in your browser</span></div>
+
+        <div class="field-group role-group">
+          <label for="role-input">WHAT ROLE ARE YOU LOOKING FOR?</label>
+          <div class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="17" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3.8 12.1c5.1 2.1 11.3 2.1 16.4 0M10 12h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <input id="role-input" type="text" placeholder="e.g. Software Engineer, Product Designer…" autocomplete="off" aria-autocomplete="list" aria-controls="role-suggestions" aria-expanded="false" spellcheck="false">
+            <button class="clear-input" id="clear-role" type="button" aria-label="Clear job role" hidden>×</button>
+            <div class="suggestions" id="role-suggestions" role="listbox" aria-label="Job role suggestions" hidden></div>
+          </div>
+          <div class="field-hint">Type any role or choose a popular suggestion.</div>
+        </div>
+
+        <div class="field-group location-group" id="location-group">
+          <label>WHERE WOULD YOU LIKE TO WORK?</label>
+          <div class="mode-switch" role="group" aria-label="Search location type">
+            <button type="button" class="mode-button is-active" data-mode="remote" aria-pressed="true"><span aria-hidden="true">◎</span> Remote roles</button>
+            <button type="button" class="mode-button" data-mode="local" aria-pressed="false"><span aria-hidden="true">⌖</span> Specific location</button>
+          </div>
+          <div class="remote-region-wrap" id="remote-region-wrap">
+            <label for="remote-region" class="region-label">REMOTE REGION</label>
+            <div class="region-select-shell">
+              <span class="region-select-icon" aria-hidden="true">◎</span>
+              <select id="remote-region" class="region-select">
+                <option value="worldwide">Worldwide — no region filter</option>
+                <optgroup label="Continents">
+                  <option value="asia">Asia</option>
+                  <option value="africa">Africa</option>
+                  <option value="europe">Europe</option>
+                  <option value="north-america">North America</option>
+                  <option value="south-america">South America</option>
+                  <option value="oceania">Oceania (Australia &amp; Pacific)</option>
+                </optgroup>
+                <optgroup label="Remote-work regions">
+                  <option value="asia-pacific">Asia-Pacific (APAC)</option>
+                  <option value="latin-america">Latin America (LATAM)</option>
+                  <option value="emea">Europe, Middle East &amp; Africa (EMEA)</option>
+                </optgroup>
+                <optgroup label="All countries &amp; territories (249 ISO entries)">
+                  <option value="country:AF">Afghanistan</option>
+                  <option value="country:AL">Albania</option>
+                  <option value="country:DZ">Algeria</option>
+                  <option value="country:AS">American Samoa</option>
+                  <option value="country:AD">Andorra</option>
+                  <option value="country:AO">Angola</option>
+                  <option value="country:AI">Anguilla</option>
+                  <option value="country:AQ">Antarctica</option>
+                  <option value="country:AG">Antigua and Barbuda</option>
+                  <option value="country:AR">Argentina</option>
+                  <option value="country:AM">Armenia</option>
+                  <option value="country:AW">Aruba</option>
+                  <option value="country:AU">Australia</option>
+                  <option value="country:AT">Austria</option>
+                  <option value="country:AZ">Azerbaijan</option>
+                  <option value="country:BS">Bahamas</option>
+                  <option value="country:BH">Bahrain</option>
+                  <option value="country:BD">Bangladesh</option>
+                  <option value="country:BB">Barbados</option>
+                  <option value="country:BY">Belarus</option>
+                  <option value="country:BE">Belgium</option>
+                  <option value="country:BZ">Belize</option>
+                  <option value="country:BJ">Benin</option>
+                  <option value="country:BM">Bermuda</option>
+                  <option value="country:BT">Bhutan</option>
+                  <option value="country:BO">Bolivia</option>
+                  <option value="country:BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="country:BA">Bosnia and Herzegovina</option>
+                  <option value="country:BW">Botswana</option>
+                  <option value="country:BV">Bouvet Island</option>
+                  <option value="country:BR">Brazil</option>
+                  <option value="country:IO">British Indian Ocean Territory</option>
+                  <option value="country:BN">Brunei Darussalam</option>
+                  <option value="country:BG">Bulgaria</option>
+                  <option value="country:BF">Burkina Faso</option>
+                  <option value="country:BI">Burundi</option>
+                  <option value="country:CV">Cabo Verde</option>
+                  <option value="country:KH">Cambodia</option>
+                  <option value="country:CM">Cameroon</option>
+                  <option value="country:CA">Canada</option>
+                  <option value="country:KY">Cayman Islands</option>
+                  <option value="country:CF">Central African Republic</option>
+                  <option value="country:TD">Chad</option>
+                  <option value="country:CL">Chile</option>
+                  <option value="country:CN">China</option>
+                  <option value="country:CX">Christmas Island</option>
+                  <option value="country:CC">Cocos (Keeling) Islands</option>
+                  <option value="country:CO">Colombia</option>
+                  <option value="country:KM">Comoros</option>
+                  <option value="country:CG">Congo</option>
+                  <option value="country:CD">Congo, The Democratic Republic of the</option>
+                  <option value="country:CK">Cook Islands</option>
+                  <option value="country:CR">Costa Rica</option>
+                  <option value="country:HR">Croatia</option>
+                  <option value="country:CU">Cuba</option>
+                  <option value="country:CW">Curaçao</option>
+                  <option value="country:CY">Cyprus</option>
+                  <option value="country:CZ">Czechia</option>
+                  <option value="country:CI">Côte d&#x27;Ivoire</option>
+                  <option value="country:DK">Denmark</option>
+                  <option value="country:DJ">Djibouti</option>
+                  <option value="country:DM">Dominica</option>
+                  <option value="country:DO">Dominican Republic</option>
+                  <option value="country:EC">Ecuador</option>
+                  <option value="country:EG">Egypt</option>
+                  <option value="country:SV">El Salvador</option>
+                  <option value="country:GQ">Equatorial Guinea</option>
+                  <option value="country:ER">Eritrea</option>
+                  <option value="country:EE">Estonia</option>
+                  <option value="country:SZ">Eswatini</option>
+                  <option value="country:ET">Ethiopia</option>
+                  <option value="country:FK">Falkland Islands (Malvinas)</option>
+                  <option value="country:FO">Faroe Islands</option>
+                  <option value="country:FJ">Fiji</option>
+                  <option value="country:FI">Finland</option>
+                  <option value="country:FR">France</option>
+                  <option value="country:GF">French Guiana</option>
+                  <option value="country:PF">French Polynesia</option>
+                  <option value="country:TF">French Southern Territories</option>
+                  <option value="country:GA">Gabon</option>
+                  <option value="country:GM">Gambia</option>
+                  <option value="country:GE">Georgia</option>
+                  <option value="country:DE">Germany</option>
+                  <option value="country:GH">Ghana</option>
+                  <option value="country:GI">Gibraltar</option>
+                  <option value="country:GR">Greece</option>
+                  <option value="country:GL">Greenland</option>
+                  <option value="country:GD">Grenada</option>
+                  <option value="country:GP">Guadeloupe</option>
+                  <option value="country:GU">Guam</option>
+                  <option value="country:GT">Guatemala</option>
+                  <option value="country:GG">Guernsey</option>
+                  <option value="country:GN">Guinea</option>
+                  <option value="country:GW">Guinea-Bissau</option>
+                  <option value="country:GY">Guyana</option>
+                  <option value="country:HT">Haiti</option>
+                  <option value="country:HM">Heard Island and McDonald Islands</option>
+                  <option value="country:VA">Holy See (Vatican City State)</option>
+                  <option value="country:HN">Honduras</option>
+                  <option value="country:HK">Hong Kong</option>
+                  <option value="country:HU">Hungary</option>
+                  <option value="country:IS">Iceland</option>
+                  <option value="country:IN">India</option>
+                  <option value="country:ID">Indonesia</option>
+                  <option value="country:IR">Iran</option>
+                  <option value="country:IQ">Iraq</option>
+                  <option value="country:IE">Ireland</option>
+                  <option value="country:IM">Isle of Man</option>
+                  <option value="country:IL">Israel</option>
+                  <option value="country:IT">Italy</option>
+                  <option value="country:JM">Jamaica</option>
+                  <option value="country:JP">Japan</option>
+                  <option value="country:JE">Jersey</option>
+                  <option value="country:JO">Jordan</option>
+                  <option value="country:KZ">Kazakhstan</option>
+                  <option value="country:KE">Kenya</option>
+                  <option value="country:KI">Kiribati</option>
+                  <option value="country:KW">Kuwait</option>
+                  <option value="country:KG">Kyrgyzstan</option>
+                  <option value="country:LA">Laos</option>
+                  <option value="country:LV">Latvia</option>
+                  <option value="country:LB">Lebanon</option>
+                  <option value="country:LS">Lesotho</option>
+                  <option value="country:LR">Liberia</option>
+                  <option value="country:LY">Libya</option>
+                  <option value="country:LI">Liechtenstein</option>
+                  <option value="country:LT">Lithuania</option>
+                  <option value="country:LU">Luxembourg</option>
+                  <option value="country:MO">Macao</option>
+                  <option value="country:MG">Madagascar</option>
+                  <option value="country:MW">Malawi</option>
+                  <option value="country:MY">Malaysia</option>
+                  <option value="country:MV">Maldives</option>
+                  <option value="country:ML">Mali</option>
+                  <option value="country:MT">Malta</option>
+                  <option value="country:MH">Marshall Islands</option>
+                  <option value="country:MQ">Martinique</option>
+                  <option value="country:MR">Mauritania</option>
+                  <option value="country:MU">Mauritius</option>
+                  <option value="country:YT">Mayotte</option>
+                  <option value="country:MX">Mexico</option>
+                  <option value="country:FM">Micronesia, Federated States of</option>
+                  <option value="country:MD">Moldova</option>
+                  <option value="country:MC">Monaco</option>
+                  <option value="country:MN">Mongolia</option>
+                  <option value="country:ME">Montenegro</option>
+                  <option value="country:MS">Montserrat</option>
+                  <option value="country:MA">Morocco</option>
+                  <option value="country:MZ">Mozambique</option>
+                  <option value="country:MM">Myanmar</option>
+                  <option value="country:NA">Namibia</option>
+                  <option value="country:NR">Nauru</option>
+                  <option value="country:NP">Nepal</option>
+                  <option value="country:NL">Netherlands</option>
+                  <option value="country:NC">New Caledonia</option>
+                  <option value="country:NZ">New Zealand</option>
+                  <option value="country:NI">Nicaragua</option>
+                  <option value="country:NE">Niger</option>
+                  <option value="country:NG">Nigeria</option>
+                  <option value="country:NU">Niue</option>
+                  <option value="country:NF">Norfolk Island</option>
+                  <option value="country:KP">North Korea</option>
+                  <option value="country:MK">North Macedonia</option>
+                  <option value="country:MP">Northern Mariana Islands</option>
+                  <option value="country:NO">Norway</option>
+                  <option value="country:OM">Oman</option>
+                  <option value="country:PK">Pakistan</option>
+                  <option value="country:PW">Palau</option>
+                  <option value="country:PS">Palestine, State of</option>
+                  <option value="country:PA">Panama</option>
+                  <option value="country:PG">Papua New Guinea</option>
+                  <option value="country:PY">Paraguay</option>
+                  <option value="country:PE">Peru</option>
+                  <option value="country:PH">Philippines</option>
+                  <option value="country:PN">Pitcairn</option>
+                  <option value="country:PL">Poland</option>
+                  <option value="country:PT">Portugal</option>
+                  <option value="country:PR">Puerto Rico</option>
+                  <option value="country:QA">Qatar</option>
+                  <option value="country:RO">Romania</option>
+                  <option value="country:RU">Russian Federation</option>
+                  <option value="country:RW">Rwanda</option>
+                  <option value="country:RE">Réunion</option>
+                  <option value="country:BL">Saint Barthélemy</option>
+                  <option value="country:SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                  <option value="country:KN">Saint Kitts and Nevis</option>
+                  <option value="country:LC">Saint Lucia</option>
+                  <option value="country:MF">Saint Martin (French part)</option>
+                  <option value="country:PM">Saint Pierre and Miquelon</option>
+                  <option value="country:VC">Saint Vincent and the Grenadines</option>
+                  <option value="country:WS">Samoa</option>
+                  <option value="country:SM">San Marino</option>
+                  <option value="country:ST">Sao Tome and Principe</option>
+                  <option value="country:SA">Saudi Arabia</option>
+                  <option value="country:SN">Senegal</option>
+                  <option value="country:RS">Serbia</option>
+                  <option value="country:SC">Seychelles</option>
+                  <option value="country:SL">Sierra Leone</option>
+                  <option value="country:SG">Singapore</option>
+                  <option value="country:SX">Sint Maarten (Dutch part)</option>
+                  <option value="country:SK">Slovakia</option>
+                  <option value="country:SI">Slovenia</option>
+                  <option value="country:SB">Solomon Islands</option>
+                  <option value="country:SO">Somalia</option>
+                  <option value="country:ZA">South Africa</option>
+                  <option value="country:GS">South Georgia and the South Sandwich Islands</option>
+                  <option value="country:KR">South Korea</option>
+                  <option value="country:SS">South Sudan</option>
+                  <option value="country:ES">Spain</option>
+                  <option value="country:LK">Sri Lanka</option>
+                  <option value="country:SD">Sudan</option>
+                  <option value="country:SR">Suriname</option>
+                  <option value="country:SJ">Svalbard and Jan Mayen</option>
+                  <option value="country:SE">Sweden</option>
+                  <option value="country:CH">Switzerland</option>
+                  <option value="country:SY">Syria</option>
+                  <option value="country:TW">Taiwan</option>
+                  <option value="country:TJ">Tajikistan</option>
+                  <option value="country:TZ">Tanzania</option>
+                  <option value="country:TH">Thailand</option>
+                  <option value="country:TL">Timor-Leste</option>
+                  <option value="country:TG">Togo</option>
+                  <option value="country:TK">Tokelau</option>
+                  <option value="country:TO">Tonga</option>
+                  <option value="country:TT">Trinidad and Tobago</option>
+                  <option value="country:TN">Tunisia</option>
+                  <option value="country:TM">Turkmenistan</option>
+                  <option value="country:TC">Turks and Caicos Islands</option>
+                  <option value="country:TV">Tuvalu</option>
+                  <option value="country:TR">Türkiye</option>
+                  <option value="country:UG">Uganda</option>
+                  <option value="country:UA">Ukraine</option>
+                  <option value="country:AE">United Arab Emirates</option>
+                  <option value="country:GB">United Kingdom</option>
+                  <option value="country:US">United States</option>
+                  <option value="country:UM">United States Minor Outlying Islands</option>
+                  <option value="country:UY">Uruguay</option>
+                  <option value="country:UZ">Uzbekistan</option>
+                  <option value="country:VU">Vanuatu</option>
+                  <option value="country:VE">Venezuela</option>
+                  <option value="country:VN">Vietnam</option>
+                  <option value="country:VG">Virgin Islands, British</option>
+                  <option value="country:VI">Virgin Islands, U.S.</option>
+                  <option value="country:WF">Wallis and Futuna</option>
+                  <option value="country:EH">Western Sahara</option>
+                  <option value="country:YE">Yemen</option>
+                  <option value="country:ZM">Zambia</option>
+                  <option value="country:ZW">Zimbabwe</option>
+                  <option value="country:AX">Åland Islands</option>
+                </optgroup>
+              </select>
+              <span class="region-select-chevron" aria-hidden="true">⌄</span>
+            </div>
+          </div>
+          <div class="input-wrap location-input-wrap" id="location-input-wrap" hidden>
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10.1c0 5.1-7 10.4-7 10.4S5 15.2 5 10.1a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.7"/></svg>
+            <input id="location-input" type="text" placeholder="e.g. Bangalore, India" autocomplete="off" aria-autocomplete="list" aria-controls="location-suggestions" aria-expanded="false" spellcheck="false">
+            <button class="clear-input" id="clear-location" type="button" aria-label="Clear location" hidden>×</button>
+            <div class="suggestions" id="location-suggestions" role="listbox" aria-label="Location suggestions" hidden></div>
+          </div>
+          <div class="field-hint" id="location-hint">Search remote roles worldwide, by continent, or by any country in the country list.</div>
+        </div>
+
+        <div class="panel-actions">
+          <button type="button" id="search-button" class="primary-button"><span>Search with Google</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="action-note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.5"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Opens Google in a new tab</span>
+        </div>
+        <p class="validation-message" id="validation-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="query-card" aria-labelledby="query-title">
+        <div class="query-header">
+          <div><span class="section-kicker">YOUR GOOGLE DORK</span><h2 id="query-title">Your search query</h2></div>
+          <button type="button" class="copy-button" id="copy-button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M16 8V5.8A1.8 1.8 0 0 0 14.2 4H5.8A1.8 1.8 0 0 0 4 5.8v8.4A1.8 1.8 0 0 0 5.8 16H8" stroke="currentColor" stroke-width="1.7"/></svg><span>Copy query</span></button>
+        </div>
+        <div class="query-output" id="query-output" aria-live="polite" tabindex="0">"Software Engineer" (remote OR "work from home" OR wfh OR "remote work" OR "work remotely" OR telecommute) (inurl:careers OR inurl:jobs OR inurl:join-us OR intitle:"we're hiring" OR intitle:"join our team" OR intitle:"careers")</div>
+        <div class="query-footer"><span><span class="green-dot"></span> Updates as you type</span><button type="button" id="reset-button" class="text-button">Reset search</button></div>
+      </section>
+    </section>
+
+    <section class="how-section" aria-labelledby="how-title">
+      <div class="section-heading"><span class="section-kicker">HOW IT WORKS</span><h2 id="how-title">A direct line to the source.</h2><p>Skip the noise. Search for openings where companies publish them.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-number">01</div><div class="step-icon role-step" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4 4M8 10.8h5.6M10.8 8v5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Choose a role</h3><p>Enter a job title in your own words or pick from popular role suggestions.</p></article>
+        <article class="step-card"><div class="step-number">02</div><div class="step-icon location-step" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19 10.1c0 5.1-7 10.4-7 10.4S5 15.2 5 10.1a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.7"/></svg></div><h3>Set your location</h3><p>Choose a remote country or continent, or narrow the search to a specific city or country.</p></article>
+        <article class="step-card"><div class="step-number">03</div><div class="step-icon search-step" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7M17 15l3 3-3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Find company listings</h3><p>Open a Google search aimed at careers pages, hiring announcements and job pages.</p></article>
+      </div>
+    </section>
+
+    <section class="popular-section" aria-labelledby="popular-title">
+      <div class="popular-heading"><div><span class="section-kicker">NEED A STARTING POINT?</span><h2 id="popular-title">Popular searches</h2></div><span class="popular-caption">Tap a role to try it</span></div>
+      <div class="popular-chips" id="popular-chips">
+        <button type="button" class="role-chip">Software Engineer</button><button type="button" class="role-chip">Data Analyst</button><button type="button" class="role-chip">Product Manager</button><button type="button" class="role-chip">UX Designer</button><button type="button" class="role-chip">Cybersecurity Analyst</button><button type="button" class="role-chip">DevOps Engineer</button><button type="button" class="role-chip">Frontend Developer</button><button type="button" class="role-chip">Machine Learning Engineer</button>
+      </div>
+    </section>
+
+    <footer class="footer"><span>Made for the curious job seeker.</span><span>Client-side only <span class="footer-separator">·</span> No account <span class="footer-separator">·</span> No job data stored</span></footer>
+  </main>
+  <script>
+/* Local suggestion data for the Job Search recreation. */
+(function () {
+  const roles = [
+    "Software Engineer", "Senior Software Engineer", "Staff Software Engineer", "Principal Software Engineer", "Junior Software Engineer", "Graduate Software Engineer", "Software Engineering Intern", "Frontend Developer", "Frontend Engineer", "Backend Developer", "Backend Engineer", "Full Stack Developer", "Full Stack Engineer", "Web Developer", "Web Application Developer", "Mobile App Developer", "iOS Developer", "Android Developer", "React Developer", "React Native Developer", "Angular Developer", "Vue.js Developer", "Node.js Developer", "Python Developer", "Java Developer", "JavaScript Developer", "TypeScript Developer", "Go Developer", "Golang Developer", "Rust Developer", "C++ Developer", "C# Developer", ".NET Developer", "PHP Developer", "Ruby on Rails Developer", "WordPress Developer", "Salesforce Developer", "SAP Developer", "ServiceNow Developer", "Embedded Software Engineer", "Firmware Engineer", "Game Developer", "Unity Developer", "Unreal Engine Developer", "AR/VR Developer", "Blockchain Developer", "Smart Contract Developer", "AI Engineer", "Machine Learning Engineer", "Senior Machine Learning Engineer", "Deep Learning Engineer", "NLP Engineer", "Computer Vision Engineer", "Generative AI Engineer", "LLM Engineer", "AI Research Scientist", "Research Scientist", "Data Scientist", "Senior Data Scientist", "Data Analyst", "Senior Data Analyst", "Business Intelligence Analyst", "BI Developer", "Analytics Engineer", "Data Engineer", "Senior Data Engineer", "Big Data Engineer", "Data Architect", "Database Administrator", "SQL Developer", "ETL Developer", "MLOps Engineer", "Data Quality Analyst", "Statistician", "Quantitative Analyst", "Cloud Engineer", "Cloud Architect", "DevOps Engineer", "Senior DevOps Engineer", "Site Reliability Engineer", "Platform Engineer", "Infrastructure Engineer", "Kubernetes Engineer", "Cloud Security Engineer", "Security Engineer", "Application Security Engineer", "Product Security Engineer", "Penetration Tester", "Penetration Testing Engineer", "Red Team Operator", "Blue Team Analyst", "SOC Analyst", "Security Analyst", "Security Architect", "Incident Response Analyst", "Threat Intelligence Analyst", "Malware Analyst", "Digital Forensics Analyst", "IAM Engineer", "GRC Analyst", "Privacy Engineer", "Network Engineer", "Network Administrator", "Systems Administrator", "Linux Administrator", "Windows Administrator", "IT Support Engineer", "Help Desk Technician", "Desktop Support Engineer", "IT Manager", "Technical Support Engineer", "Technical Support Specialist", "QA Engineer", "Quality Assurance Analyst", "Software Tester", "Test Automation Engineer", "SDET", "Performance Test Engineer", "Manual Tester", "QA Lead", "Engineering Manager", "Technical Lead", "Solutions Architect", "Technical Architect", "Enterprise Architect", "Technical Program Manager", "Project Manager", "Technical Project Manager", "Product Manager", "Technical Product Manager", "Associate Product Manager", "Product Owner", "Scrum Master", "Agile Coach", "Business Analyst", "Systems Analyst", "Requirements Analyst", "UX Designer", "UI Designer", "UI/UX Designer", "Product Designer", "Senior Product Designer", "UX Researcher", "UX Writer", "Interaction Designer", "Visual Designer", "Graphic Designer", "Web Designer", "Design Systems Engineer", "Content Designer", "Technical Writer", "Developer Advocate", "Developer Relations Engineer", "Solutions Engineer", "Sales Engineer", "Customer Success Manager", "Customer Support Specialist", "Customer Success Engineer", "Implementation Consultant", "Business Development Representative", "Account Executive", "Account Manager", "Sales Manager", "Marketing Manager", "Digital Marketing Specialist", "SEO Specialist", "SEM Specialist", "Content Marketing Manager", "Content Strategist", "Social Media Manager", "Brand Manager", "Growth Marketing Manager", "Product Marketing Manager", "Marketing Analyst", "Copywriter", "Content Writer", "Editor", "Community Manager", "Recruiter", "Technical Recruiter", "Talent Acquisition Specialist", "HR Business Partner", "HR Manager", "People Operations Specialist", "Compensation Analyst", "Learning and Development Specialist", "Finance Analyst", "Financial Analyst", "Accountant", "Senior Accountant", "Controller", "Finance Manager", "Investment Analyst", "Operations Analyst", "Operations Manager", "Supply Chain Analyst", "Logistics Coordinator", "Procurement Specialist", "Program Manager", "Administrative Assistant", "Executive Assistant", "Office Manager", "Legal Counsel", "Compliance Officer", "Paralegal", "Risk Analyst", "Audit Associate", "Research Analyst", "Strategy Analyst", "Management Consultant", "Business Operations Manager", "Customer Experience Manager", "Revenue Operations Analyst", "Revenue Operations Manager", "Sales Operations Analyst", "Product Operations Manager", "Chief of Staff", "Software Developer Intern", "Data Science Intern", "Cybersecurity Intern", "Product Management Intern", "UI/UX Design Intern", "Machine Learning Intern", "Business Analyst Intern", "Cloud Engineer Intern", "IT Support Intern", "Entry Level Data Analyst", "Entry Level Software Engineer", "Entry Level Cybersecurity Analyst", "Data Entry Specialist", "Technical Project Coordinator", "Technical Account Manager", "Solutions Consultant", "Customer Success Associate", "Talent Partner", "Payroll Specialist", "Medical Coder", "Registered Nurse", "Clinical Research Associate", "Pharmacist", "Mechanical Engineer", "Electrical Engineer", "Civil Engineer", "Industrial Designer", "Interior Designer", "Architect", "Production Engineer", "Manufacturing Engineer", "Product Engineer", "Field Service Engineer", "Technical Sales Representative", "Accountant Intern", "Graphic Design Intern", "Content Marketing Intern"
+  ];
+
+  const cities = [
+    "Bangalore, India", "Mumbai, India", "Delhi, India", "New Delhi, India", "Hyderabad, India", "Chennai, India", "Pune, India", "Kolkata, India", "Ahmedabad, India", "Jaipur, India", "Kochi, India", "Gurugram, India", "Gurgaon, India", "Noida, India", "Chandigarh, India", "Indore, India", "Coimbatore, India", "Thiruvananthapuram, India", "Mysore, India", "Mangalore, India", "Nagpur, India", "Surat, India", "Vadodara, India", "Bhopal, India", "Lucknow, India", "Visakhapatnam, India", "Bhubaneswar, India", "Patna, India", "Dehradun, India", "Nashik, India", "Rajkot, India", "Ludhiana, India", "Madurai, India", "Vijayawada, India", "Guwahati, India", "Faridabad, India", "Ghaziabad, India", "Thane, India", "Trichy, India", "Tiruppur, India",
+    "San Francisco, California, USA", "New York, New York, USA", "Seattle, Washington, USA", "Austin, Texas, USA", "Boston, Massachusetts, USA", "Los Angeles, California, USA", "Chicago, Illinois, USA", "Denver, Colorado, USA", "Atlanta, Georgia, USA", "Dallas, Texas, USA", "Houston, Texas, USA", "San Diego, California, USA", "San Jose, California, USA", "Washington, DC, USA", "Miami, Florida, USA", "Phoenix, Arizona, USA", "Portland, Oregon, USA", "Philadelphia, Pennsylvania, USA", "Minneapolis, Minnesota, USA", "Raleigh, North Carolina, USA", "Pittsburgh, Pennsylvania, USA", "Detroit, Michigan, USA", "Salt Lake City, Utah, USA", "Tampa, Florida, USA", "Orlando, Florida, USA", "Charlotte, North Carolina, USA", "Nashville, Tennessee, USA", "Columbus, Ohio, USA", "San Antonio, Texas, USA", "Las Vegas, Nevada, USA", "Sacramento, California, USA", "Baltimore, Maryland, USA", "Newark, New Jersey, USA", "Jersey City, New Jersey, USA", "Irvine, California, USA", "Santa Clara, California, USA", "Palo Alto, California, USA", "Mountain View, California, USA", "Redmond, Washington, USA", "Bellevue, Washington, USA",
+    "Toronto, Canada", "Vancouver, Canada", "Montreal, Canada", "Ottawa, Canada", "Calgary, Canada", "Edmonton, Canada", "Waterloo, Canada", "Quebec City, Canada", "Winnipeg, Canada", "Halifax, Canada",
+    "London, United Kingdom", "Manchester, United Kingdom", "Cambridge, United Kingdom", "Oxford, United Kingdom", "Bristol, United Kingdom", "Edinburgh, United Kingdom", "Glasgow, United Kingdom", "Birmingham, United Kingdom", "Leeds, United Kingdom", "Liverpool, United Kingdom", "Reading, United Kingdom", "Dublin, Ireland", "Cork, Ireland", "Amsterdam, Netherlands", "Rotterdam, Netherlands", "Eindhoven, Netherlands", "Berlin, Germany", "Munich, Germany", "Hamburg, Germany", "Frankfurt, Germany", "Cologne, Germany", "Stuttgart, Germany", "Paris, France", "Lyon, France", "Toulouse, France", "Nice, France", "Barcelona, Spain", "Madrid, Spain", "Valencia, Spain", "Lisbon, Portugal", "Porto, Portugal", "Zurich, Switzerland", "Geneva, Switzerland", "Lausanne, Switzerland", "Vienna, Austria", "Stockholm, Sweden", "Gothenburg, Sweden", "Copenhagen, Denmark", "Oslo, Norway", "Helsinki, Finland", "Warsaw, Poland", "Krakow, Poland", "Prague, Czechia", "Brno, Czechia", "Budapest, Hungary", "Bucharest, Romania", "Sofia, Bulgaria", "Athens, Greece", "Tallinn, Estonia", "Riga, Latvia", "Vilnius, Lithuania", "Brussels, Belgium", "Luxembourg City, Luxembourg", "Milan, Italy", "Rome, Italy", "Turin, Italy", "Bologna, Italy", "Florence, Italy", "Belgrade, Serbia", "Zagreb, Croatia", "Ljubljana, Slovenia", "Reykjavik, Iceland",
+    "Sydney, Australia", "Melbourne, Australia", "Brisbane, Australia", "Perth, Australia", "Adelaide, Australia", "Canberra, Australia", "Gold Coast, Australia", "Auckland, New Zealand", "Wellington, New Zealand", "Christchurch, New Zealand",
+    "Singapore", "Kuala Lumpur, Malaysia", "Penang, Malaysia", "Jakarta, Indonesia", "Bali, Indonesia", "Bangkok, Thailand", "Chiang Mai, Thailand", "Ho Chi Minh City, Vietnam", "Hanoi, Vietnam", "Manila, Philippines", "Cebu, Philippines", "Hong Kong", "Taipei, Taiwan", "Tokyo, Japan", "Osaka, Japan", "Kyoto, Japan", "Seoul, South Korea", "Busan, South Korea", "Shanghai, China", "Beijing, China", "Shenzhen, China", "Guangzhou, China", "Dubai, United Arab Emirates", "Abu Dhabi, United Arab Emirates", "Riyadh, Saudi Arabia", "Jeddah, Saudi Arabia", "Doha, Qatar", "Tel Aviv, Israel", "Jerusalem, Israel", "Istanbul, Turkey", "Ankara, Turkey", "Cairo, Egypt", "Cape Town, South Africa", "Johannesburg, South Africa", "Nairobi, Kenya", "Lagos, Nigeria", "Abuja, Nigeria", "Accra, Ghana", "Casablanca, Morocco", "Tunis, Tunisia", "Kigali, Rwanda", "Kampala, Uganda", "Mexico City, Mexico", "Guadalajara, Mexico", "Monterrey, Mexico", "São Paulo, Brazil", "Rio de Janeiro, Brazil", "Florianópolis, Brazil", "Buenos Aires, Argentina", "Santiago, Chile", "Bogotá, Colombia", "Medellín, Colombia", "Lima, Peru", "Montevideo, Uruguay", "San José, Costa Rica", "Panama City, Panama"
+  ];
+
+  const countries = [
+    "Worldwide", "United States", "Canada", "United Kingdom", "India", "Australia", "New Zealand", "Ireland", "Germany", "France", "Netherlands", "Switzerland", "Sweden", "Denmark", "Norway", "Finland", "Spain", "Portugal", "Italy", "Austria", "Belgium", "Luxembourg", "Poland", "Czechia", "Hungary", "Romania", "Bulgaria", "Greece", "Estonia", "Latvia", "Lithuania", "Croatia", "Serbia", "Slovenia", "Iceland", "Japan", "South Korea", "Singapore", "Malaysia", "Indonesia", "Thailand", "Vietnam", "Philippines", "Taiwan", "Hong Kong", "United Arab Emirates", "Saudi Arabia", "Qatar", "Israel", "Turkey", "South Africa", "Kenya", "Nigeria", "Ghana", "Egypt", "Morocco", "Mexico", "Brazil", "Argentina", "Chile", "Colombia", "Peru", "Costa Rica", "Panama", "Uruguay", "Ecuador", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Vietnam", "Ukraine", "Georgia", "Armenia", "Kazakhstan", "Uzbekistan", "Cyprus", "Malta", "Mauritius", "Remote - North America", "Remote - Europe", "Remote - Asia", "Remote - Latin America", "Remote - Africa", "Remote - Middle East", "Remote - APAC"
+  ];
+
+  const locations = [...new Set([...cities, ...countries])];
+  window.JOB_SEARCH_DATA = {
+    roles: [...new Set(roles)],
+    locations,
+    popularRoles: ["Software Engineer", "Data Analyst", "Product Manager", "UX Designer", "Cybersecurity Analyst", "DevOps Engineer", "Frontend Developer", "Machine Learning Engineer"]
+  };
+})();
+
+  </script>
+  <script>
+(function () {
+  'use strict';
+
+  const data = window.JOB_SEARCH_DATA || { roles: [], locations: [], popularRoles: [] };
+  const roleInput = document.getElementById('role-input');
+  const locationInput = document.getElementById('location-input');
+  const locationInputWrap = document.getElementById('location-input-wrap');
+  const remoteRegionWrap = document.getElementById('remote-region-wrap');
+  const remoteRegionSelect = document.getElementById('remote-region');
+  const locationHint = document.getElementById('location-hint');
+  const roleSuggestions = document.getElementById('role-suggestions');
+  const locationSuggestions = document.getElementById('location-suggestions');
+  const queryOutput = document.getElementById('query-output');
+  const searchButton = document.getElementById('search-button');
+  const copyButton = document.getElementById('copy-button');
+  const resetButton = document.getElementById('reset-button');
+  const clearRole = document.getElementById('clear-role');
+  const clearLocation = document.getElementById('clear-location');
+  const validationMessage = document.getElementById('validation-message');
+  const modeButtons = [...document.querySelectorAll('.mode-button')];
+  let mode = 'remote';
+  let activeIndexes = { role: -1, location: -1 };
+  let currentSuggestions = { role: [], location: [] };
+  let copyResetTimer;
+
+  const CAREER_PAGES = '(inurl:careers OR inurl:jobs OR inurl:join-us OR intitle:"we\'re hiring" OR intitle:"join our team" OR intitle:"careers")';
+  const REMOTE_TERMS = '(remote OR "work from home" OR wfh OR "remote work" OR "work remotely" OR telecommute)';
+
+  // Region groups use compact aliases so the full dork stays within Google's
+  // practical query-length/term budget while still matching common region labels.
+  const REMOTE_SCOPED_TERMS = '(remote OR wfh OR "work from home")';
+
+  // Search aliases for country names that often appear in alternate forms in job posts.
+  // Other countries fall back to their selected ISO label plus common eligibility phrases.
+  const REMOTE_COUNTRY_TERMS = {
+    US: '("United States" OR USA OR "U.S." OR "US only" OR "based in the US")',
+    CA: '(Canada OR Canadian OR "Canada only" OR "based in Canada")',
+    GB: '("United Kingdom" OR UK OR Britain OR British OR "UK only")',
+    IN: '(India OR Indian OR "India only")',
+    AU: '(Australia OR Australian OR "AU only")',
+    NZ: '("New Zealand" OR "NZ only")',
+    KR: '("South Korea" OR "Republic of Korea")',
+    KP: '("North Korea" OR DPRK)',
+    RU: '(Russia OR "Russian Federation")',
+    CN: '(China OR Chinese)',
+    AE: '(UAE OR "United Arab Emirates")',
+    CZ: '(Czechia OR "Czech Republic")',
+    TR: '(Turkey OR Türkiye)',
+    CI: '("Côte d\'Ivoire" OR "Cote d Ivoire" OR "Ivory Coast")',
+    CD: '("Democratic Republic of the Congo" OR "DR Congo" OR DRC)',
+    CG: '("Republic of the Congo" OR "Congo-Brazzaville")',
+    BO: '(Bolivia OR "Plurinational State of Bolivia")',
+    IR: '(Iran OR "Islamic Republic of Iran")',
+    SY: '(Syria OR "Syrian Arab Republic")',
+    TW: '(Taiwan OR "Republic of China")',
+    TZ: '(Tanzania OR "United Republic of Tanzania")',
+    VE: '(Venezuela OR "Bolivarian Republic of Venezuela")',
+    LA: '(Laos OR "Lao PDR")',
+    MD: '(Moldova OR "Republic of Moldova")',
+    PS: '(Palestine OR "State of Palestine")',
+    MK: '("North Macedonia" OR Macedonia)',
+    MM: '(Myanmar OR Burma)',
+    SZ: '(Eswatini OR Swaziland)',
+    TL: '("Timor-Leste" OR "East Timor")',
+    FM: '(Micronesia OR "Federated States of Micronesia")',
+    BN: '(Brunei OR "Brunei Darussalam")',
+    CV: '("Cabo Verde" OR "Cape Verde")',
+    VA: '("Vatican City" OR "Holy See")'
+  };
+
+  const REMOTE_REGION_TERMS = {
+    'united-states': '("United States" OR USA OR "U.S." OR "US only")',
+    canada: '(Canada OR Canadian OR "Canada only" OR "based in Canada")',
+    'united-kingdom': '("United Kingdom" OR UK OR Britain OR "UK only")',
+    india: '(India OR Indian OR "India only")',
+    asia: '(Asia OR APAC OR India OR Singapore OR Japan OR China OR Philippines OR Indonesia OR Malaysia)',
+    africa: '(Africa OR "South Africa" OR Nigeria OR Kenya OR Egypt OR Ghana OR Morocco)',
+    europe: '(Europe OR EU OR EMEA OR UK OR Germany OR France OR Ireland OR Netherlands OR Spain OR Italy)',
+    'north-america': '("North America" OR USA OR Canada OR Mexico)',
+    'south-america': '("South America" OR LATAM OR Brazil OR Argentina OR Chile OR Colombia OR Peru OR Mexico)',
+    oceania: '(Oceania OR Australia OR "New Zealand" OR ANZ)',
+    'australia-new-zealand': '(Australia OR "New Zealand" OR ANZ)',
+    'asia-pacific': '(APAC OR "Asia Pacific" OR India OR Singapore OR Japan OR Australia OR "New Zealand")',
+    'latin-america': '(LATAM OR "Latin America" OR Brazil OR Argentina OR Chile OR Colombia OR Peru OR Mexico)',
+    emea: '(EMEA OR Europe OR Africa OR "Middle East" OR UAE OR Israel OR "Saudi Arabia")'
+  };
+
+  function quoteTerm(value) {
+    return '"' + String(value).trim().replace(/["“”]/g, '').replace(/\s+/g, ' ') + '"';
+  }
+
+  function buildQuery() {
+    const rawRole = roleInput.value.trim() || 'Software Engineer';
+    const rolePart = quoteTerm(rawRole);
+    if (mode === 'remote') {
+      const region = remoteRegionSelect.value || 'worldwide';
+      let regionTerms = REMOTE_REGION_TERMS[region];
+      if (region.startsWith('country:')) {
+        const countryCode = region.slice('country:'.length);
+        const countryName = remoteRegionSelect.options[remoteRegionSelect.selectedIndex]?.textContent.trim() || countryCode;
+        regionTerms = REMOTE_COUNTRY_TERMS[countryCode]
+          || `(${quoteTerm(countryName)} OR ${quoteTerm(`${countryName} only`)} OR ${quoteTerm(`based in ${countryName}`)})`;
+      }
+      return regionTerms
+        ? `${rolePart} ${REMOTE_SCOPED_TERMS} ${regionTerms} ${CAREER_PAGES}`
+        : `${rolePart} ${REMOTE_TERMS} ${CAREER_PAGES}`;
+    }
+    const rawLocation = locationInput.value.trim() || 'Bangalore';
+    return `${rolePart} (${quoteTerm(rawLocation)}) ${CAREER_PAGES}`;
+  }
+
+  function updateQuery() {
+    queryOutput.textContent = buildQuery();
+    clearRole.hidden = !roleInput.value;
+    clearLocation.hidden = !locationInput.value;
+    validationMessage.textContent = '';
+    if (mode === 'remote') {
+      const selectedText = remoteRegionSelect.options[remoteRegionSelect.selectedIndex]?.textContent || 'Worldwide';
+      locationHint.textContent = remoteRegionSelect.value === 'worldwide'
+        ? 'Search remote roles worldwide with no country or continent filter.'
+        : remoteRegionSelect.value.startsWith('country:')
+          ? `Target remote roles mentioning ${selectedText}; review each listing for actual work-location eligibility.`
+          : `Target remote roles associated with ${selectedText.replace(/\s*[—–].*$/, '').trim()}; review each listing for actual work-location eligibility.`;
+    }
+  }
+
+  function normalize(text) { return text.toLocaleLowerCase().trim(); }
+
+  function renderSuggestions(type, items, query) {
+    const input = type === 'role' ? roleInput : locationInput;
+    const container = type === 'role' ? roleSuggestions : locationSuggestions;
+    currentSuggestions[type] = items;
+    activeIndexes[type] = -1;
+    container.replaceChildren();
+    if (!query.trim()) {
+      container.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    if (!items.length) {
+      const empty = document.createElement('div');
+      empty.className = 'empty-suggestion';
+      empty.textContent = `No matching suggestions. Press Enter to use “${query.trim()}”.`;
+      container.appendChild(empty);
+      container.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      return;
+    }
+    items.forEach((item, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'suggestion-option';
+      button.setAttribute('role', 'option');
+      button.setAttribute('aria-selected', 'false');
+      button.dataset.index = String(index);
+      const symbol = document.createElement('span');
+      symbol.className = 'suggestion-symbol';
+      symbol.textContent = type === 'role' ? '↗' : '⌖';
+      const textWrap = document.createElement('span');
+      textWrap.textContent = item;
+      if (type === 'role') {
+        const meta = document.createElement('span');
+        meta.className = 'suggestion-meta';
+        meta.textContent = 'Job title';
+        textWrap.appendChild(meta);
+      }
+      button.append(symbol, textWrap);
+      button.addEventListener('mousedown', event => event.preventDefault());
+      button.addEventListener('click', () => {
+        input.value = item;
+        closeSuggestions(type);
+        updateQuery();
+        input.focus();
+      });
+      container.appendChild(button);
+    });
+    container.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function getMatches(list, value, limit = 7) {
+    const needle = normalize(value);
+    const starts = [];
+    const contains = [];
+    for (const item of list) {
+      const n = normalize(item);
+      if (n.startsWith(needle)) starts.push(item);
+      else if (n.includes(needle)) contains.push(item);
+      if (starts.length >= limit) break;
+    }
+    return [...starts, ...contains].slice(0, limit);
+  }
+
+  function closeSuggestions(type) {
+    const input = type === 'role' ? roleInput : locationInput;
+    const container = type === 'role' ? roleSuggestions : locationSuggestions;
+    container.hidden = true;
+    input.setAttribute('aria-expanded', 'false');
+    activeIndexes[type] = -1;
+  }
+
+  function moveActive(type, direction) {
+    const container = type === 'role' ? roleSuggestions : locationSuggestions;
+    if (container.hidden || !currentSuggestions[type].length) return false;
+    const max = currentSuggestions[type].length - 1;
+    activeIndexes[type] = Math.max(0, Math.min(max, activeIndexes[type] + direction));
+    [...container.querySelectorAll('.suggestion-option')].forEach((el, idx) => {
+      const active = idx === activeIndexes[type];
+      el.setAttribute('aria-selected', String(active));
+      if (active) el.scrollIntoView({ block: 'nearest' });
+    });
+    return true;
+  }
+
+  function handleInputKeydown(type, event) {
+    const container = type === 'role' ? roleSuggestions : locationSuggestions;
+    const input = type === 'role' ? roleInput : locationInput;
+    if (event.key === 'ArrowDown') {
+      if (!container.hidden) { event.preventDefault(); moveActive(type, 1); }
+    } else if (event.key === 'ArrowUp') {
+      if (!container.hidden) { event.preventDefault(); moveActive(type, -1); }
+    } else if (event.key === 'Enter') {
+      if (!container.hidden && activeIndexes[type] >= 0 && currentSuggestions[type][activeIndexes[type]]) {
+        event.preventDefault();
+        input.value = currentSuggestions[type][activeIndexes[type]];
+        closeSuggestions(type);
+        updateQuery();
+      } else {
+        closeSuggestions(type);
+        if (type === 'role') {
+          if (mode === 'local') locationInput.focus(); else doSearch();
+        } else doSearch();
+      }
+    } else if (event.key === 'Escape') {
+      closeSuggestions(type);
+    }
+  }
+
+  function setMode(nextMode) {
+    mode = nextMode;
+    modeButtons.forEach(button => {
+      const active = button.dataset.mode === mode;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    const isLocal = mode === 'local';
+    locationInputWrap.hidden = !isLocal;
+    remoteRegionWrap.hidden = isLocal;
+    locationHint.textContent = isLocal
+      ? 'Use a city, state or country to narrow the search to local career pages.'
+      : 'Search remote roles worldwide, by continent, or by any country in the country list.';
+    updateQuery();
+  }
+
+  function doSearch() {
+    const role = roleInput.value.trim();
+    const location = locationInput.value.trim();
+    if (!role) {
+      validationMessage.textContent = 'Enter a job title to build your search.';
+      roleInput.focus();
+      return;
+    }
+    if (mode === 'local' && !location) {
+      validationMessage.textContent = 'Enter a city or country, or switch to Remote / Worldwide.';
+      locationInput.focus();
+      return;
+    }
+    const url = 'https://www.google.com/search?q=' + encodeURIComponent(buildQuery());
+    const opened = window.open(url, '_blank');
+    if (!opened) {
+      validationMessage.textContent = 'Your browser blocked the new tab. Allow pop-ups for this page, or copy the query below into Google.';
+    } else {
+      opened.opener = null;
+      validationMessage.textContent = '';
+    }
+  }
+
+  async function copyQuery() {
+    const query = buildQuery();
+    const label = copyButton.querySelector('span');
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(query);
+      } else {
+        const helper = document.createElement('textarea');
+        helper.value = query;
+        helper.setAttribute('readonly', '');
+        helper.style.position = 'fixed';
+        helper.style.opacity = '0';
+        document.body.appendChild(helper);
+        helper.select();
+        const copied = document.execCommand('copy');
+        helper.remove();
+        if (!copied) throw new Error('Clipboard copy was denied');
+      }
+      label.textContent = 'Copied!';
+      copyButton.classList.add('copied');
+    } catch (_error) {
+      label.textContent = 'Select query to copy';
+      queryOutput.focus();
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(queryOutput);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    window.clearTimeout(copyResetTimer);
+    copyResetTimer = window.setTimeout(() => {
+      label.textContent = 'Copy query';
+      copyButton.classList.remove('copied');
+    }, 1800);
+  }
+
+  function reset() {
+    roleInput.value = 'Software Engineer';
+    locationInput.value = '';
+    remoteRegionSelect.value = 'worldwide';
+    setMode('remote');
+    closeSuggestions('role');
+    closeSuggestions('location');
+    updateQuery();
+    roleInput.focus();
+  }
+
+  roleInput.addEventListener('input', () => {
+    updateQuery();
+    renderSuggestions('role', getMatches(data.roles, roleInput.value), roleInput.value);
+  });
+  locationInput.addEventListener('input', () => {
+    updateQuery();
+    renderSuggestions('location', getMatches(data.locations, locationInput.value, 8), locationInput.value);
+  });
+  roleInput.addEventListener('keydown', event => handleInputKeydown('role', event));
+  locationInput.addEventListener('keydown', event => handleInputKeydown('location', event));
+  roleInput.addEventListener('focus', () => { if (roleInput.value.trim()) renderSuggestions('role', getMatches(data.roles, roleInput.value), roleInput.value); });
+  locationInput.addEventListener('focus', () => { if (mode === 'local' && locationInput.value.trim()) renderSuggestions('location', getMatches(data.locations, locationInput.value, 8), locationInput.value); });
+  roleInput.addEventListener('blur', () => window.setTimeout(() => closeSuggestions('role'), 120));
+  locationInput.addEventListener('blur', () => window.setTimeout(() => closeSuggestions('location'), 120));
+  modeButtons.forEach(button => button.addEventListener('click', () => setMode(button.dataset.mode)));
+  remoteRegionSelect.addEventListener('change', updateQuery);
+  searchButton.addEventListener('click', doSearch);
+  copyButton.addEventListener('click', copyQuery);
+  resetButton.addEventListener('click', reset);
+  clearRole.addEventListener('click', () => { roleInput.value = ''; updateQuery(); roleInput.focus(); renderSuggestions('role', getMatches(data.roles, ''), ''); });
+  clearLocation.addEventListener('click', () => { locationInput.value = ''; updateQuery(); locationInput.focus(); });
+  document.getElementById('popular-chips').addEventListener('click', event => {
+    const chip = event.target.closest('.role-chip');
+    if (!chip) return;
+    roleInput.value = chip.textContent.trim();
+    updateQuery();
+    roleInput.focus();
+    document.querySelector('.search-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.role-group')) closeSuggestions('role');
+    if (!event.target.closest('.location-group')) closeSuggestions('location');
+  });
+
+  updateQuery();
+})();
+
+  </script>
+</body>
+</html>
